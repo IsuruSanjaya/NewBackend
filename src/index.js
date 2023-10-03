@@ -37,7 +37,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+
+
 //middleware
+
+
 app.use((req, res, next) => {
   console.log(req.path, req.method)
   next()
@@ -45,24 +50,6 @@ app.use((req, res, next) => {
 
 
 
-
-
-// app.get('/read-cookies', (req, res) => {
-
-//   const cookies = req.cookies;
-//   console.log(cookies.newUser);
-
-//   res.json(cookies);
-
-// });
-
-// mongoose.connect('mongodb+srv://isuru:1234@mernbookstore.a7dhtbg.mongodb.net/No_Poverty?retryWrites=true&w=majority', { useNewUrlParser: true })
-//     .then(() => console.log('MongoDB connected'))
-//     .catch(err => console.log(err));
-
-
-
-// // app.use(errorHandler);
 
 
 app.use('/items', ItemsRoutes);
